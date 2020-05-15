@@ -20,7 +20,7 @@ A javascript implementation of a priority queue backed by a binary heap.
 
 ```
 
-import { MinPriorityQueue, MaxPriorityQueue } from 'vanilla-priority-queue';
+const {  MinPriorityQueue, MaxPriorityQueue } = require('vanilla-priority-queue');
 
 let minPriorityQueue = new MinPriorityQueue();
 minPriorityQueue.insert(3);
