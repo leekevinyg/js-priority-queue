@@ -1,8 +1,6 @@
 # JS Priority Queue
 
-A javascript implementation of a priority queue. 
-
-The queue is backed by a binary heap and provides constant time lookup of the highest priority item and O(log n) ```insert``` and ```remove``` operations.
+A javascript implementation of a priority queue. The queue is backed by a binary heap and provides constant time lookup of the highest priority item and O(log n) ```insert``` and ```remove``` operations.
 
 [![Build Status](https://travis-ci.com/leekevinyg/react-tag-input.svg?branch=master)](https://travis-ci.com/leekevinyg/react-tag-input)
 [![Coverage Status](https://coveralls.io/repos/github/leekevinyg/react-tag-input/badge.svg?branch=master)](https://coveralls.io/github/leekevinyg/react-tag-input?branch=master)
