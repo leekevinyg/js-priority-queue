@@ -15,14 +15,14 @@ The queue is backed by a binary heap and provides constant time lookup of the hi
 <a name="Installation"></a>
 # Installation
 
-```npm i js-priority-queue --save```
+```npm i vanilla-priority-queue --save```
 
 <a name="Usage"></a>
 # Usage
 
 ```
 
-import { MinPriorityQueue, MaxPriorityQueue } from 'js-priority-queue';
+import { MinPriorityQueue, MaxPriorityQueue } from 'vanilla-priority-queue';
 
 let minPriorityQueue = new MinPriorityQueue();
 minPriorityQueue.insert(3);
