@@ -1,10 +1,10 @@
-# JS Priority Queue
+# Vanilla Priority Queue
 
 A javascript implementation of a priority queue backed by a binary heap.
 
 [![Build Status](https://travis-ci.com/leekevinyg/js-priority-queue.svg?branch=master)](https://travis-ci.com/leekevinyg/js-priority-queue)
 [![Coverage Status](https://coveralls.io/repos/github/leekevinyg/js-priority-queue/badge.svg)](https://coveralls.io/github/leekevinyg/js-priority-queue)
-[![npm version](https://badge.fury.io/js/reactjs-tag-input.svg)](https://badge.fury.io/js/reactjs-tag-input)
+[![npm version](https://badge.fury.io/js/vanilla-priority-queue.svg)](https://badge.fury.io/js/vanilla-priority-queue)
 
 - <a href="#Installation">Installation</a>
 - <a href="#Usage">Usage</a>
