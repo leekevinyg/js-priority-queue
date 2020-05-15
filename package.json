@@ -1,0 +1,35 @@
+{
+  "name": "js-priority-queue",
+  "version": "0.0.1",
+  "repository": "https://github.com/leekevinyg/js-priority-queue",
+  "description": "javascript implementation of a priority queue",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "coverage": "npm run test -- --coverage",
+    "build": "rm -rf dist && NODE_ENV=production babel src/ --out-dir dist --copy-files --ignore __tests__,spec.js,test.js"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/index.js"
+    ]
+  },
+  "keywords": [
+    "javascript",
+    "priority queue",
+    "queue",
+    "heap",
+    "heaps",
+    "algorithms"
+  ],
+  "author": "Kevin Lee",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "jest": "^26.0.1"
+  }
+}
