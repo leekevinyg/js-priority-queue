@@ -4,15 +4,18 @@ class MinPriorityQueue {
     }
     // (1) place item at the next available binary tree position
     // (2) bubble it up if necessary to restore heap property
-    insert(node) {
+    insert(key, priority) {
         // add the node into the last position in the binary tree
-        this.heap.push(node);
+        this.heap.push({
+            key,
+            priority,
+        });
         if (this.heap.length > 1) {
             // bubble up if necessary
             let current = this.heap.length - 1;
             let parent = Math.floor(current / 2);
             // Math.floor(current/2) is the parent of the node at the current index
-            while (current > 1 && this.heap[parent] > this.heap[current]) {
+            while (current > 1 && this.heap[parent].priority > this.heap[current].priority) {
                 // swap current with parent (bubble up)
                 let savedCurrent = this.heap[current];
                 let savedParent = this.heap[parent];
@@ -47,8 +50,8 @@ class MinPriorityQueue {
         if (this.heap[leftChild] === undefined) {
             return topElement;
         }
-        while (Math.min(this.heap[leftChild], Number.isInteger(this.heap[rightChild]) ? this.heap[rightChild] : Number.POSITIVE_INFINITY) < this.heap[current]) {
-            if (this.heap[leftChild] < (Number.isInteger(this.heap[rightChild]) ? this.heap[rightChild] : Number.POSITIVE_INFINITY)) {
+        while (Math.min(this.heap[leftChild].priority, (this.heap[rightChild] ? this.heap[rightChild].priority : Number.POSITIVE_INFINITY)) < this.heap[current].priority) {
+            if (this.heap[leftChild].priority < (this.heap[rightChild] ? this.heap[rightChild].priority : Number.POSITIVE_INFINITY)) {
                 let savedParent = this.heap[current];
                 let savedChild = this.heap[leftChild];
                 this.heap[current] = savedChild;
@@ -90,15 +93,18 @@ class MaxPriorityQueue {
     }
     // (1) place item at the next available binary tree position
     // (2) bubble it up if necessary to restore heap property
-    insert(node) {
+    insert(key, priority) {
         // add the node into the last position in the binary tree
-        this.heap.push(node);
+        this.heap.push({
+            key,
+            priority,
+        });
         if (this.heap.length > 1) {
             // bubble up if necessary
             let current = this.heap.length - 1;
             let parent = Math.floor(current / 2);
             // Math.floor(current/2) is the parent of the node at the current index
-            while (current > 1 && this.heap[parent] < this.heap[current]) {
+            while (current > 1 && this.heap[parent].priority < this.heap[current].priority) {
                 // swap current with parent (bubble up)
                 let savedCurrent = this.heap[current];
                 let savedParent = this.heap[parent];
@@ -133,8 +139,8 @@ class MaxPriorityQueue {
         if (this.heap[leftChild] === undefined) {
             return topElement;
         }
-        while (Math.max(this.heap[leftChild], Number.isInteger(this.heap[rightChild]) ? this.heap[rightChild] : Number.NEGATIVE_INFINITY) > this.heap[current]) {
-            if (this.heap[leftChild] > (Number.isInteger(this.heap[rightChild]) ? this.heap[rightChild] : Number.NEGATIVE_INFINITY)) {
+        while (Math.max(this.heap[leftChild].priority, (this.heap[rightChild] ? this.heap[rightChild].priority : Number.NEGATIVE_INFINITY)) > this.heap[current].priority) {
+            if (this.heap[leftChild].priority > (this.heap[rightChild] ? this.heap[rightChild].priority : Number.NEGATIVE_INFINITY)) {
                 let savedParent = this.heap[current];
                 let savedChild = this.heap[leftChild];
                 this.heap[current] = savedChild;
