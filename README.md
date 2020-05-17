@@ -1,6 +1,6 @@
 # Vanilla Priority Queue
 
-A javascript implementation of a priority queue backed by a binary heap.
+A javascript implementation of a priority queue. The queue is backed by a binary heap and provides ```O(lg n)``` insert/remove operations and ```O(1)``` retrieval of the highest priority item.
 
 [![Build Status](https://travis-ci.com/leekevinyg/js-priority-queue.svg?branch=master)](https://travis-ci.com/leekevinyg/js-priority-queue)
 [![Coverage Status](https://coveralls.io/repos/github/leekevinyg/js-priority-queue/badge.svg)](https://coveralls.io/github/leekevinyg/js-priority-queue)
@@ -53,7 +53,7 @@ Both the ```MaxPriorityQueue``` and ```MinPriorityQueue``` expose the following 
 
 * **peek()**
 
-Returns the highest priority item in the queue in constant time. For a ```MaxPriorityQueue``` this is the max element. For a ```MinPriorityQueue``` this is the min element.
+Returns the highest priority item in the queue in constant ```O(1)``` time. For a ```MaxPriorityQueue``` this is the max item. For a ```MinPriorityQueue``` this is the min item.
 
 * **insert(item, priority)**
 
@@ -73,7 +73,7 @@ The operation completes in ```O(lg n)``` time.
 
 * **remove()**
 
-Removes the highest priority item in the queue in ```O(lg n)``` time. For a ```MaxPriorityQueue``` this is the max element. For a ```MinPriorityQueue``` this is the min element. 
+Removes the highest priority item in the queue in ```O(lg n)``` time. For a ```MaxPriorityQueue``` this is the max item. For a ```MinPriorityQueue``` this is the min item. 
 
 * **isEmpty()**
 
