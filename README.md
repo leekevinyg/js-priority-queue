@@ -37,11 +37,6 @@ minPriorityQueue.isEmpty() // returns true
 
 
 let maxPriorityQueue = new MaxPriorityQueue();
-/*
-    The insert operation takes an item and it's priority.
-    The item argument can be anything.
-    The priority argument must be provided as an integer value.
-*/
 maxPriorityQueue.insert(3, 3);
 maxPriorityQueue.insert(10, 10);
 maxPriorityQueue.peek() // returns 10
