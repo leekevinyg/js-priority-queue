@@ -53,7 +53,7 @@ Both the ```MaxPriorityQueue``` and ```MinPriorityQueue``` expose the following 
 
 * **peek()**
 
-Returns the highest priority item in the queue in constant time. For a ```MaxPriorityQueue``` this is the max element. For a ```MinPriorityQueue``` this is the min element 
+Returns the highest priority item in the queue in constant time. For a ```MaxPriorityQueue``` this is the max element. For a ```MinPriorityQueue``` this is the min element.
 
 * **insert(item, priority)**
 
