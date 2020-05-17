@@ -1,6 +1,6 @@
 {
   "name": "vanilla-priority-queue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": "https://github.com/leekevinyg/js-priority-queue",
   "description": "javascript implementation of a priority queue",
   "main": "dist/index.js",
