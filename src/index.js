@@ -4,10 +4,10 @@ class MinPriorityQueue {
     }
     // (1) place item at the next available binary tree position
     // (2) bubble it up if necessary to restore heap property
-    insert(key, priority) {
+    insert(item, priority) {
         // add the node into the last position in the binary tree
         this.heap.push({
-            key,
+            item,
             priority,
         });
         if (this.heap.length > 1) {
@@ -31,7 +31,7 @@ class MinPriorityQueue {
     // (3) Bubble down item to restore heap property
     remove() {
         // take off root
-        let topElement = this.heap[1];
+        let topElement = this.heap[1] ? this.heap[1].item : undefined;
         if (this.heap.length === 2) {
             // only 1 item left in the heap, pop it off and return topElement
             this.heap.pop();
@@ -74,7 +74,7 @@ class MinPriorityQueue {
         return topElement;
     }
     peek() {
-        return this.heap[1];
+        return this.heap[1] ? this.heap[1].item : undefined;
     }
     isEmpty() {
         return this.heap.length === 1;
@@ -93,10 +93,10 @@ class MaxPriorityQueue {
     }
     // (1) place item at the next available binary tree position
     // (2) bubble it up if necessary to restore heap property
-    insert(key, priority) {
+    insert(item, priority) {
         // add the node into the last position in the binary tree
         this.heap.push({
-            key,
+            item,
             priority,
         });
         if (this.heap.length > 1) {
@@ -120,7 +120,7 @@ class MaxPriorityQueue {
     // (3) Bubble down item to restore heap property
     remove() {
         // take off root
-        let topElement = this.heap[1];
+        let topElement = this.heap[1] ? this.heap[1].item : undefined;
         if (this.heap.length === 2) {
             // only 1 item left in the heap, pop it off and return topElement
             this.heap.pop();
@@ -163,7 +163,7 @@ class MaxPriorityQueue {
         return topElement;
     }
     peek() {
-        return this.heap[1];
+        return this.heap[1] ? this.heap[1].item : undefined;
     }
     isEmpty() {
         return this.heap.length === 1;

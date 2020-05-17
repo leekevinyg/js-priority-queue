@@ -23,24 +23,30 @@ A javascript implementation of a priority queue backed by a binary heap.
 const {  MinPriorityQueue, MaxPriorityQueue } = require('vanilla-priority-queue');
 
 let minPriorityQueue = new MinPriorityQueue();
-
-let key = 3; // this is used to identify the inserted object inside the queue
-let priority = 3; // must be provided as an integer value
-minPriorityQueue.insert(key, priority);
-
+/*
+    The insert operation takes an item and it's priority.
+    The item argument can be anything.
+    The priority argument must be provided as an integer value.
+*/
+minPriorityQueue.insert(3, 3);
 minPriorityQueue.insert(10, 10);
-minPriorityQueue.peek() // returns { key: 3, priority: 3 }
-minPriorityQueue.remove() // returns { key: 3, priority: 3 }
-minPriorityQueue.remove() // returns { key: 10, priority: 10 }
+minPriorityQueue.peek() // returns 3
+minPriorityQueue.remove() // returns 3
+minPriorityQueue.remove() // returns 10
 minPriorityQueue.isEmpty() // returns true
 
 
 let maxPriorityQueue = new MaxPriorityQueue();
+/*
+    The insert operation takes an item and it's priority.
+    The item argument can be anything.
+    The priority argument must be provided as an integer value.
+*/
 maxPriorityQueue.insert(3, 3);
 maxPriorityQueue.insert(10, 10);
-maxPriorityQueue.peek() // returns { key: 10, priority: 10 }
-maxPriorityQueue.remove() // returns { key: 10, priority: 10 }
-maxPriorityQueue.remove() // returns { key: 3, priority: 3 }
+maxPriorityQueue.peek() // returns 10
+maxPriorityQueue.remove() // returns 10
+maxPriorityQueue.remove() // returns 3
 maxPriorityQueue.isEmpty() // returns true
 
 ```
@@ -54,18 +60,18 @@ Both the ```MaxPriorityQueue``` and ```MinPriorityQueue``` expose the following 
 
 Returns the highest priority item in the queue in constant time. For a ```MaxPriorityQueue``` this is the max element. For a ```MinPriorityQueue``` this is the min element 
 
-* **insert(key, priority)**
+* **insert(item, priority)**
 
-The insert operation takes ```key``` and ```priority``` arguments and inserts the following object into the queue:
+The insert operation takes an ```item``` and it's ```priority``` and inserts the following object into the queue:
 
 ``` 
 {
-    key: key, 
+    item: item, 
     priority: priority
 } 
 ```
 
-The ```key``` argument wil be used to identify the object with the given priority.
+The ```item``` argument can be anything.
 The ```priority``` argument must be provided as an integer.
 
 The operation completes in ```O(lg n)``` time.
@@ -73,16 +79,6 @@ The operation completes in ```O(lg n)``` time.
 * **remove()**
 
 Removes the highest priority item in the queue in ```O(lg n)``` time. For a ```MaxPriorityQueue``` this is the max element. For a ```MinPriorityQueue``` this is the min element. 
-
-The returned item is of the form:
-
-```
-{
-    key: keyProvidedInTheInsertOperation,
-    priority: priorityProvidedInTheInsertOperation
-}
-
-```
 
 * **isEmpty()**
 

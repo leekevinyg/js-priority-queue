@@ -5,7 +5,7 @@ test('Minimum Priority Queue: Insert() and Peek() - returns the minimum element 
     queue.insert(10, 10);
     queue.insert(1, 1);
     queue.insert(20, 20);
-    expect(queue.peek().key).toBe(1);
+    expect(queue.peek()).toBe(1);
 });
 
 test('Minimum Priority Queue: IsEmpty() - returns true if queue is empty', () => {
@@ -25,27 +25,27 @@ test('Minimum Priority Queue: Remove() - removes minimum element from the queue'
     queue.insert(100, 100);
     queue.insert(1000, 1000);
     queue.insert(1, 1);
-    expect(queue.remove().key).toBe(1);
-    expect(queue.remove().key).toBe(100);
-    expect(queue.remove().key).toBe(1000);
+    expect(queue.remove()).toBe(1);
+    expect(queue.remove()).toBe(100);
+    expect(queue.remove()).toBe(1000);
     expect(queue.remove()).toBe(undefined);
     queue.insert(3,3);
     queue.insert(2,2);
     queue.insert(1,1);
-    expect(queue.remove().key).toBe(1);
+    expect(queue.remove()).toBe(1);
 });
 
 test('Minimum Priority Queue: Remove() - removes minimum element from a heap of 1 item', () => {
     let queue = new MinPriorityQueue();
     queue.insert(100, 100);
-    expect(queue.remove().key).toBe(100);
+    expect(queue.remove()).toBe(100);
 });
 
 test('Minimum Priority Queue: Remove() - removes minimum element from a heap of 2 items', () => {
     let queue = new MinPriorityQueue();
     queue.insert(100, 100);
     queue.insert(1000, 1000);
-    expect(queue.remove().key).toBe(100);
+    expect(queue.remove()).toBe(100);
 });
 
 test('Minimum Priority Queue: handles duplicates', () => {
@@ -54,7 +54,7 @@ test('Minimum Priority Queue: handles duplicates', () => {
     queue.insert(100, 100);
     queue.insert(100, 100);
     queue.insert(1,1);
-    expect(queue.remove().key).toBe(1);
+    expect(queue.remove()).toBe(1);
     expect(queue.length()).toBe(3);
 });
 
@@ -64,10 +64,10 @@ test('Minimum Priority Queue: Remove() - restores the heap up left side of binar
     queue.insert(2, 2);
     queue.insert(7, 7);
     queue.insert(1, 1);
-    expect(queue.remove().key).toBe(1);
-    expect(queue.remove().key).toBe(2);
-    expect(queue.remove().key).toBe(4);
-    expect(queue.remove().key).toBe(7);
+    expect(queue.remove()).toBe(1);
+    expect(queue.remove()).toBe(2);
+    expect(queue.remove()).toBe(4);
+    expect(queue.remove()).toBe(7);
 });
 
 test('Minimum Priority Queue: Remove() - restores the heap up right side of binary tree after removal', () => {
@@ -78,10 +78,10 @@ test('Minimum Priority Queue: Remove() - restores the heap up right side of bina
     queue.insert(1,1);
     queue.insert(0,0);
     queue.insert(0,0);
-    expect(queue.remove().key).toBe(0);
-    expect(queue.remove().key).toBe(0);
-    expect(queue.remove().key).toBe(1);
-    expect(queue.remove().key).toBe(2);
+    expect(queue.remove()).toBe(0);
+    expect(queue.remove()).toBe(0);
+    expect(queue.remove()).toBe(1);
+    expect(queue.remove()).toBe(2);
     expect(queue.getHeap().length).toBe(3); // inclues the null element at index 0;
 });
 
@@ -91,7 +91,7 @@ test('Maximum Priority Queue: Insert() and Peek() - returns the max element in t
     queue.insert(10, 10);
     queue.insert(1, 1);
     queue.insert(20, 20);
-    expect(queue.peek().key).toBe(20);
+    expect(queue.peek()).toBe(20);
 });
 
 test('Maximum Priority Queue: IsEmpty() - returns true if queue is empty', () => {
@@ -112,27 +112,27 @@ test('Maximum Priority Queue: Remove() - removes maximum element from the queue'
     queue.insert(100, 100);
     queue.insert(1000, 1000);
     queue.insert(1,1);
-    expect(queue.remove().key).toBe(1000);
-    expect(queue.remove().key).toBe(100);
-    expect(queue.remove().key).toBe(1);
+    expect(queue.remove()).toBe(1000);
+    expect(queue.remove()).toBe(100);
+    expect(queue.remove()).toBe(1);
     expect(queue.remove()).toBe(undefined);
     queue.insert(3,3);
     queue.insert(2,2);
     queue.insert(1,1);
-    expect(queue.remove().key).toBe(3);
+    expect(queue.remove()).toBe(3);
 });
 
 test('Maximum Priority Queue: Remove() - removes maximum element from a heap of 1 item', () => {
     let queue = new MaxPriorityQueue();
     queue.insert(100, 100);
-    expect(queue.remove().key).toBe(100);
+    expect(queue.remove()).toBe(100);
 });
 
 test('Maximum Priority Queue: Remove() - removes maximum element from a heap of 2 items', () => {
     let queue = new MaxPriorityQueue();
     queue.insert(100, 100);
     queue.insert(1000, 1000);
-    expect(queue.remove().key).toBe(1000);
+    expect(queue.remove()).toBe(1000);
 });
 
 test('Maximum Priority Queue: handles duplicates', () => {
@@ -141,7 +141,7 @@ test('Maximum Priority Queue: handles duplicates', () => {
     queue.insert(100, 100);
     queue.insert(100, 100);
     queue.insert(1,1);
-    expect(queue.remove().key).toBe(100);
+    expect(queue.remove()).toBe(100);
     expect(queue.length()).toBe(3);
 });
 
@@ -151,10 +151,10 @@ test('Maximum Priority Queue: Remove() - restores the heap up left side of binar
     queue.insert(2,2);
     queue.insert(7,7);
     queue.insert(1,1);
-    expect(queue.remove().key).toBe(7);
-    expect(queue.remove().key).toBe(4);
-    expect(queue.remove().key).toBe(2);
-    expect(queue.remove().key).toBe(1);
+    expect(queue.remove()).toBe(7);
+    expect(queue.remove()).toBe(4);
+    expect(queue.remove()).toBe(2);
+    expect(queue.remove()).toBe(1);
 });
 
 test('Maximum Priority Queue: Remove() - restores the heap up right side of binary tree after removal', () => {
@@ -165,9 +165,9 @@ test('Maximum Priority Queue: Remove() - restores the heap up right side of bina
     queue.insert(1,1);
     queue.insert(0,0);
     queue.insert(0,0);
-    expect(queue.remove().key).toBe(7);
-    expect(queue.remove().key).toBe(4);
-    expect(queue.remove().key).toBe(2);
-    expect(queue.remove().key).toBe(1);
+    expect(queue.remove()).toBe(7);
+    expect(queue.remove()).toBe(4);
+    expect(queue.remove()).toBe(2);
+    expect(queue.remove()).toBe(1);
     expect(queue.getHeap().length).toBe(3); // inclues the null element at index 0;
 });
