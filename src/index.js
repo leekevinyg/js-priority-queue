@@ -36,8 +36,10 @@ class MinPriorityQueue {
         if (this.heap[leftChild] === undefined) {
             return topElement;
         }
-        while (Math.min(this.heap[leftChild].priority, (this.heap[rightChild] ? this.heap[rightChild].priority : Number.POSITIVE_INFINITY)) < this.heap[current].priority) {
-            if (this.heap[leftChild].priority < (this.heap[rightChild] ? this.heap[rightChild].priority : Number.POSITIVE_INFINITY)) {
+        while (Math.min(this.heap[leftChild].priority, (this.heap[rightChild] ? 
+            this.heap[rightChild].priority : Number.POSITIVE_INFINITY)) < this.heap[current].priority) {
+            if (this.heap[leftChild].priority < (this.heap[rightChild] ? 
+                this.heap[rightChild].priority : Number.POSITIVE_INFINITY)) {
                 let savedParent = this.heap[current];
                 let savedChild = this.heap[leftChild];
                 this.heap[current] = savedChild;
@@ -111,8 +113,10 @@ class MaxPriorityQueue {
         if (this.heap[leftChild] === undefined) {
             return topElement;
         }
-        while (Math.max(this.heap[leftChild].priority, (this.heap[rightChild] ? this.heap[rightChild].priority : Number.NEGATIVE_INFINITY)) > this.heap[current].priority) {
-            if (this.heap[leftChild].priority > (this.heap[rightChild] ? this.heap[rightChild].priority : Number.NEGATIVE_INFINITY)) {
+        while (Math.max(this.heap[leftChild].priority, (this.heap[rightChild] ? 
+            this.heap[rightChild].priority : Number.NEGATIVE_INFINITY)) > this.heap[current].priority) {
+            if (this.heap[leftChild].priority > (this.heap[rightChild] ? 
+                this.heap[rightChild].priority : Number.NEGATIVE_INFINITY)) {
                 let savedParent = this.heap[current];
                 let savedChild = this.heap[leftChild];
                 this.heap[current] = savedChild;
