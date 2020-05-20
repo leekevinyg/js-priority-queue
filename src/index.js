@@ -2,21 +2,15 @@ class MinPriorityQueue {
     constructor() {
         this.heap = [null];
     }
-    // (1) place item at the next available binary tree position
-    // (2) bubble it up if necessary to restore heap property
     insert(item, priority) {
-        // add the node into the last position in the binary tree
         this.heap.push({
             item,
             priority,
         });
         if (this.heap.length > 1) {
-            // bubble up if necessary
             let current = this.heap.length - 1;
             let parent = Math.floor(current / 2);
-            // Math.floor(current/2) is the parent of the node at the current index
             while (current > 1 && this.heap[parent].priority > this.heap[current].priority) {
-                // swap current with parent (bubble up)
                 let savedCurrent = this.heap[current];
                 let savedParent = this.heap[parent];
                 this.heap[current] = savedParent;
@@ -26,24 +20,16 @@ class MinPriorityQueue {
             }
         }
     }
-    // (1) Remove item at root of tree 
-    // (2) Place item in last position at the root of the tree
-    // (3) Bubble down item to restore heap property
     remove() {
-        // take off root
         let topElement = this.heap[1] ? this.heap[1].item : undefined;
         if (this.heap.length === 2) {
-            // only 1 item left in the heap, pop it off and return topElement
             this.heap.pop();
             return topElement;
         } else if (this.heap.length === 1) {
-            // heap is empty
             return topElement;
         } else {
-            // place last item at root
             this.heap[1] = this.heap.pop();
         }
-        // bubble it down to restore heap property
         let current = 1;
         let leftChild = 2;
         let rightChild = 3;
@@ -91,21 +77,15 @@ class MaxPriorityQueue {
     constructor() {
         this.heap = [null];
     }
-    // (1) place item at the next available binary tree position
-    // (2) bubble it up if necessary to restore heap property
     insert(item, priority) {
-        // add the node into the last position in the binary tree
         this.heap.push({
             item,
             priority,
         });
         if (this.heap.length > 1) {
-            // bubble up if necessary
             let current = this.heap.length - 1;
             let parent = Math.floor(current / 2);
-            // Math.floor(current/2) is the parent of the node at the current index
             while (current > 1 && this.heap[parent].priority < this.heap[current].priority) {
-                // swap current with parent (bubble up)
                 let savedCurrent = this.heap[current];
                 let savedParent = this.heap[parent];
                 this.heap[current] = savedParent;
@@ -115,24 +95,16 @@ class MaxPriorityQueue {
             }
         }
     }
-    // (1) Remove item at root of tree 
-    // (2) Place item in last position at the root of the tree
-    // (3) Bubble down item to restore heap property
     remove() {
-        // take off root
         let topElement = this.heap[1] ? this.heap[1].item : undefined;
         if (this.heap.length === 2) {
-            // only 1 item left in the heap, pop it off and return topElement
             this.heap.pop();
             return topElement;
         } else if (this.heap.length === 1) {
-            // heap is empty
             return topElement;
         } else {
-            // place last item at root
             this.heap[1] = this.heap.pop();
         }
-        // bubble it down to restore heap property
         let current = 1;
         let leftChild = 2;
         let rightChild = 3;
