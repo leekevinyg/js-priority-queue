@@ -85,4 +85,4 @@ Returns the length of the queue.
 
 * **getHeap()**
 
-Returns an array representation of the binary heap backing the priority queue. Note this contains a dummy ```null``` element at index ```0```.
+Returns an array representation of the binary heap backing the priority queue. Note that this contains a dummy ```null``` element at index ```0```.
