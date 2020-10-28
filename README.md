@@ -1,6 +1,6 @@
 # Vanilla Priority Queue
 
-A javascript implementation of a priority queue. The queue is backed by a binary heap and provides ```O(lg n)``` insert/remove operations and ```O(1)``` retrieval of the highest priority item.
+A javascript implementation of a priority queue. The queue is backed by a binary heap and provides ```O(lg n)``` insert/remove operations and ```O(1)``` retrieval of the highest priority item. Depending on if a ```MaxPriorityQueue``` or a ```MinPriorityQueue``` is initialized, the highest priority item can be the maximum or minimum.
 
 [![Build Status](https://travis-ci.com/leekevinyg/js-priority-queue.svg?branch=master)](https://travis-ci.com/leekevinyg/js-priority-queue)
 [![Coverage Status](https://coveralls.io/repos/github/leekevinyg/js-priority-queue/badge.svg)](https://coveralls.io/github/leekevinyg/js-priority-queue)
